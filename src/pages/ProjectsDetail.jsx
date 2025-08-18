@@ -167,7 +167,7 @@ const ProjectsDetail = () => {
                   alt={project.title}
                   className="absolute inset-0 w-full h-full object-contain bg-black-400"
                   onError={(e) => {
-                    e.target.src = "/3D-Portfolio/images/placeholder.png";
+                    e.target.src = "/WebDev-Portfolio/images/placeholder.png";
                   }}
                 />
               </div>

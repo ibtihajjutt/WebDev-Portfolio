@@ -1,6 +1,6 @@
 // Helper function to get the correct base path for assets
 const getAssetPath = (path) => {
-  const basePath = import.meta.env.DEV ? '' : '/3D-Portfolio';
+  const basePath = import.meta.env.DEV ? '' : '/WebDev-Portfolio';
   return `${basePath}${path}`;
 };
 
@@ -19,9 +19,9 @@ const bentoSocialLinks = [
     icon: getAssetPath("/images/github.svg"),
   },
   {
-    name: "Instagram",
-    href: "https://www.facebook.com/",
-    icon: getAssetPath("/images/insta.svg"),
+    name: "X",
+    href: "https://x.com/JattIbthaj",
+    icon: getAssetPath("/images/x.svg"),
   },
   {
     name: "LinkedIn",
@@ -115,7 +115,7 @@ const projectsData = [
     title: "SPLYT Drink",
     subtitle: "Interactive Protein & Caffeine Beverage Showcase",
     description: "A cutting-edge marketing website for SPLYT, a premium protein and caffeine drink brand, designed to blend nostalgic aesthetics with modern web interactivity. This project represents a complete brand digital experience, featuring sophisticated scroll-triggered animations, immersive product showcases, and device-optimized performance. I built this platform to not just display product information, but to create an emotional connection through motion design and thoughtful user interactions. The site takes visitors on a journey through the brand's unique flavors, nutritional benefits, and customer testimonials, all while maintaining buttery-smooth 60fps animations across devices. What started as a simple product page evolved into a case study of how modern web technologies can elevate brand storytelling.",
-    image: "/images/splyt-drink.png",
+    image: getAssetPath("/images/splyt-drink.png"),
     technologies: ["React 19", "GSAP", "Tailwind CSS", "ScrollTrigger", "ScrollSmoother", "SplitText", "Vite", "react-responsive"],
     duration: "2 Weeks",
     client: "Beverage Brand (Concept)",
@@ -162,7 +162,7 @@ const projectsData = [
     title: "Gymstatic",
     subtitle: "Modern Gym Management Platform",
     description: "A comprehensive fitness platform featuring membership management, class scheduling, and member engagement tools designed to streamline gym operations and enhance user experience.",
-    image: "/images/gym.png",
+    image: getAssetPath("/images/gym.png"),
     technologies: ["React", "Tailwind CSS",  "React Scroll", "Lucide Icons", "Vite"],
     duration: "8 Weeks",
     client: "Personal Project",
@@ -203,7 +203,7 @@ const projectsData = [
     title: "Foodie Hub",
     subtitle: "Modern Food Delivery Platform UI",
     description: "A mouthwatering React-based interface for a contemporary food delivery service that makes ordering as satisfying as the meals themselves. I designed this project to solve the common problem of cluttered food apps by creating a visually delicious yet functionally simple ordering experience. The interface combines appetite-stimulating colors with intuitive navigation, making the journey from hunger to checkout both beautiful and efficient. What began as a practice project evolved into a case study on how strategic color psychology and micro-interactions can significantly improve conversion rates in e-commerce interfaces. The warm gradient backgrounds and food-focused animations create an emotional connection before users even see the menu items.",
-    image: "/images/foodie-hub.png",
+    image: getAssetPath("/images/foodie-hub.png"),
     technologies: ["React 19", "Vite", "Tailwind CSS",  "React Icons", "GitHub Pages"],
     duration: "6 Weeks",
     client: "Personal Project",
@@ -252,7 +252,7 @@ const projectsData = [
     title: "Klimate",
     subtitle: "Hyperlocal Weather Intelligence Platform",
     description: "Klimate redefines weather forecasting by combining precision meteorology with thoughtful UX design. As a developer passionate about both clean code and atmospheric science, I built this app to solve the frustration of juggling multiple weather sources. Using the OpenWeatherMap API, Klimate delivers hyperlocal forecasts with surgical accuracy while maintaining a minimalist interface. The project evolved from a simple weather widget into a full-fledged application with intelligent caching, adaptive themes, and predictive search – all while keeping bundle size under 50KB. What makes Klimate special is how it balances real-time data with offline resilience, remembering your favorite locations and last-viewed forecast even without connectivity.",
-    image: "/images/klimate2.png",
+    image: getAssetPath("/images/klimate2.png"),
     technologies: [
       "React 19",
       "TypeScript 5.3",
@@ -312,7 +312,7 @@ const projectsData = [
     title: "Sonic Earphones",
     subtitle: "Immersive Product Launch Microsite",
     description: "A sensory-driven Framer experience that makes visitors feel the audio quality before they buy. Designed for the premium Sonic Earphones launch, this microsite transforms standard e-commerce conventions into an interactive audio journey. By leveraging Framer's scroll-triggered animations and seamless video integration, I created the illusion of spatial audio through visual storytelling. The minimalist interface keeps focus on product craftsmanship while subtle hover effects highlight key features. Built in just 4 days, this project demonstrates how Framer can deliver production-ready marketing sites faster than traditional development approaches.",
-    image: "/images/sonic.png",
+    image: getAssetPath("/images/sonic.png"),
     technologies: [
       "Framer",
       "Figma (UI/UX)",
@@ -366,7 +366,7 @@ const projectsData = [
     title: "Pipowork",
     subtitle: "Trusted Plumbing Services Platform",
     description: "A refreshing digital storefront for Pipowork Plumbing, transforming a traditionally analog service into a seamless online experience. Designed in Framer, this website combines approachable professionalism with intuitive navigation, making emergency plumbing services feel just a click away. The crisp white and rejuvenating green palette evokes cleanliness and reliability, while strategically placed CTAs guide users from problem recognition to solution booking in under 30 seconds. Built without code, this project demonstrates how modern tools like Framer can deliver enterprise-grade marketing sites faster and more cost-effectively than traditional development.",
-    image: "/images/pipoworks2.png",
+    image: getAssetPath("/images/pipoworks2.png"),
     technologies: [
       "Framer (No-Code)",
       "Figma (UI Prototyping)",
@@ -422,28 +422,28 @@ const testimonials = [
     pos: "Founder of ModernEdge Solutions",
     review:
       "David Jhon turned our vision into a stunning, functional platform that our customers love. Their creativity and technical expertise truly set them apart.",
-    imgPath: "/3D-Portfolio/images/client1.png",
+    imgPath: getAssetPath("/images/client1.png"),
   },
   {
     name: "Emily Carter",
     pos: "UX Designer at PixelWorks Studio",
     review:
       "David Jhon consistently brings fresh ideas and innovative solutions. Their passion for creativity and attention to detail elevate every project.",
-    imgPath: "/3D-Portfolio/images/client2.png",
+    imgPath: getAssetPath("/images/client2.png"),
   },
   {
     name: "Sarah Lopez",
     pos: "Entrepreneur and Small Business Owner",
     review:
       "Exceeded my expectations with a unique and beautifully designed product that works flawlessly. Their creative touch is outstanding.",
-    imgPath: "/3D-Portfolio/images/client3.png",
+    imgPath: getAssetPath("/images/client3.png"),
   },
   {
     name: "David Chen",
     pos: "Project Manager at CreativeSphere Agency",
     review:
       "Blends technical skills with bold creativity to deliver exceptional results. They push boundaries and elevate every project they work on.",
-    imgPath: "/3D-Portfolio/images/client4.png",
+    imgPath: getAssetPath("/images/client4.png"),
   },
 ];
 
@@ -451,22 +451,22 @@ const footerIconsList = [
   {
     name: "Facebook",
     href: "https://www.facebook.com/",
-    icon: "images/b-fb.svg",
+    icon: getAssetPath("/images/b-fb.svg"),
   },
   {
     name: "Instagram",
     href: "https://www.facebook.com/",
-    icon: "images/b-insta.svg",
+    icon: getAssetPath("/images/b-insta.svg"),
   },
   {
     name: "LinkedIn",
     href: "https://www.facebook.com/",
-    icon: "images/b-linked.svg",
+    icon: getAssetPath("/images/b-linked.svg"),
   },
   {
     name: "WhatsApp",
     href: "https://www.facebook.com/",
-    icon: "images/b-whatsapp.svg",
+    icon: getAssetPath("/images/b-whatsapp.svg"),
   },
 ];
 

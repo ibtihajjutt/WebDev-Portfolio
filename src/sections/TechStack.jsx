@@ -4,9 +4,9 @@ import { iconsList } from "../constants";
 
 const TechStack = () => {
   return (
-    <section id="techstack">
+    <section id="techstack ">
     <div className="w-full h-full">
-      <div className="w-full md:my-40 my-20">
+      <div className="w-full md:my-40 my-8">
         <div className="container mx-auto md:p-0 px-5">
           <TitleHeader
             title="TECH STACK"

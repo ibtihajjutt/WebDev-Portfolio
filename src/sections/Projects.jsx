@@ -4,7 +4,7 @@ import GradientSpheres from "../components/GradientSpheres";
 
 const Projects = () => {
   return (
-    <section className="w-full h-full flex-center relative" id="projects">
+    <section className="w-full  h-full flex-center relative" id="projects">
       <GradientSpheres
         sphere1Class="projects-gradient-sphere projects-sphere-1"
         sphere2Class="projects-gradient-sphere projects-sphere-2"

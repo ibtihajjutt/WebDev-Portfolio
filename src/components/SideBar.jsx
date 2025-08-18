@@ -43,11 +43,11 @@ const SideBar = () => {
   return (
     <div className="md:hidden block">
       <div className="fixed z-[100] top-7 right-5" onClick={toggleSideBar}>
-        <img src="images/menu-icon.png" alt="menu" />
+        <img src="/WebDev-Portfolio/images/menu-icon.png" alt="menu" />
       </div>
       <div className="fixed z-[100] -translate-x-[100%] w-screen h-dvh side-bar-bg">
         <div className="flex justify-end m-5" onClick={toggleSideBar}>
-          <img src="images/x.png" alt="close" />
+          <img src="/WebDev-Portfolio/images/x.png" alt="close" />
         </div>
         <div className="mt-20 px-10">
           <div className="flex flex-col items-center gap-20">

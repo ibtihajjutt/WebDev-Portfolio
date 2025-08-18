@@ -58,7 +58,7 @@ const About = () => {
               <div className="bg-black-300 rounded-2xl p-7 w-full h-full">
                 <div>
                   <img
-                    src="/images/flower.svg"
+                    src="/WebDev-Portfolio/images/flower.svg"
                     alt="flower"
                     className="md:w-32 w-16 flower"
                   />
@@ -112,10 +112,11 @@ const About = () => {
               <div className="bg-black-300 rounded-2xl p-7 w-full h-full">
                 <div className="flex flex-col h-full justify-center gap-2">
                   <h1 className="animated-text gradient-title md:text-3xl text-2xl font-medium">
-                   Interface Design & Flow
+                    Interface Design & Flow
                   </h1>
                   <p className="animated-text md:text-2xl max-w-96">
-                    I create interfaces that look great, feel natural, and work effortlessly.
+                    I create interfaces that look great, feel natural, and work
+                    effortlessly.
                   </p>
                 </div>
               </div>
@@ -135,25 +136,30 @@ const About = () => {
                 </div>
               </div>
             </div>
+           
             {bentoSocialLinks.map((item, index) => (
               <div key={index} className="md:col-span-4 col-span-12 row-span-2">
-                <div className="bg-black-300 rounded-2xl p-7 w-full h-full group cursor-pointer">
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-black-300 rounded-2xl p-7 w-full h-full group cursor-pointer block">
                   <div className="flex justify-between items-center h-full">
                     <div className="flex items-center md:gap-5">
-                      <img src={item.icon} alt={item.icon} />
+                      <img src={item.icon} alt={item.name} />
                       <h1 className="gradient-title md:text-3xl text-xl md:m-0 ms-5 font-medium">
                         {item.name}
                       </h1>
                     </div>
                     <div className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform">
                       <img
-                        src="/images/arrowupright.svg"
+                        src="/WebDev-Portfolio/images/arrowupright.svg"
                         alt="arrow-up"
                         className="md:scale-100 scale-50"
                       />
                     </div>
                   </div>
-                </div>
+                </a>
               </div>
             ))}
           </div>

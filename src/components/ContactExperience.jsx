@@ -18,7 +18,7 @@ const ContactExperience = () => {
           lineHeight={0.5}
           letterSpacing={0.02}
           size={1.5}
-          font="/fonts/Inter_Bold.json" // Ensure this path is correct
+          font="/WebDev-Portfolio/fonts/Inter_Bold.json" // Ensure this path is correct
           
         >
           {"Hello\nWorld!"}

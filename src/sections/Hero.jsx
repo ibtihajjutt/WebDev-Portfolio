@@ -24,13 +24,13 @@ const Hero = () => {
               <div className="flex flex-col items-center md:gap-5 gap-1">
                 <p className="md:text-base text-xs">Explore</p>
                 <img
-                  src="/images/arrowdown.svg"
+                  src="/WebDev-Portfolio/images/arrowdown.svg"
                   alt="arrowdown"
                   className="size-7 animate-bounce"
                 />
               </div>
               <div className="flex flex-col items-end">
-                <img src="/images/shape.svg" alt="shape" />
+                <img src="/WebDev-Portfolio/images/shape.svg" alt="shape" />
                 <h1 className="font-bold md:text-9xl text-5xl">DEVELOPER</h1>
               </div>
             </div>
