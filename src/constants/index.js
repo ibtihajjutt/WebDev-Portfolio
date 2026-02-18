@@ -106,6 +106,21 @@ const slides = [
     title: "Pipoworks",
     img: getAssetPath("/images/pipoworks.png"),
   },
+  {
+    id: 7,
+    title: "Travel Website",
+    img: getAssetPath("/images/travel-website.png"),
+  },
+  {
+    id: 8,
+    title: "Pure Flow",
+    img: getAssetPath("/images/pure-flow.png"),
+  },
+  {
+    id: 9,
+    title: "Velvet Pour",
+    img: getAssetPath("/images/velvet-pour.png"),
+  },
 ];
 
 // New projects data with detailed information
@@ -163,7 +178,7 @@ const projectsData = [
     subtitle: "Modern Gym Management Platform",
     description: "A comprehensive fitness platform featuring membership management, class scheduling, and member engagement tools designed to streamline gym operations and enhance user experience.",
     image: getAssetPath("/images/gym.png"),
-    technologies: ["React", "Tailwind CSS",  "React Scroll", "Lucide Icons", "Vite"],
+    technologies: ["React", "Tailwind CSS", "React Scroll", "Lucide Icons", "Vite"],
     duration: "8 Weeks",
     client: "Personal Project",
     year: "2024",
@@ -204,7 +219,7 @@ const projectsData = [
     subtitle: "Modern Food Delivery Platform UI",
     description: "A mouthwatering React-based interface for a contemporary food delivery service that makes ordering as satisfying as the meals themselves. I designed this project to solve the common problem of cluttered food apps by creating a visually delicious yet functionally simple ordering experience. The interface combines appetite-stimulating colors with intuitive navigation, making the journey from hunger to checkout both beautiful and efficient. What began as a practice project evolved into a case study on how strategic color psychology and micro-interactions can significantly improve conversion rates in e-commerce interfaces. The warm gradient backgrounds and food-focused animations create an emotional connection before users even see the menu items.",
     image: getAssetPath("/images/foodie-hub.png"),
-    technologies: ["React 19", "Vite", "Tailwind CSS",  "React Icons", "GitHub Pages"],
+    technologies: ["React 19", "Vite", "Tailwind CSS", "React Icons", "GitHub Pages"],
     duration: "6 Weeks",
     client: "Personal Project",
     year: "2024",
@@ -413,6 +428,256 @@ const projectsData = [
       "60% of non-emergency jobs booked online within 3 months",
       "2-minute reduction in average inquiry call duration"
     ]
+  },
+  {
+    id: 7,
+    title: "Cinematic Luxury Travel",
+    subtitle: "Immersive Travel Booking Platform with Scroll-Driven Storytelling",
+    description: "A high-performance, immersive travel booking experience built with Next.js 14, designed to captivate users with cinematic animations, smooth interactions, and a premium aesthetic. This project represents a fusion of luxury brand storytelling and technical innovation, featuring a custom canvas-based scrollytelling engine that transforms standard scrolling into a video-like narrative experience. I built this platform to push the boundaries of what's possible on the web, creating emotional connections through motion design while maintaining buttery-smooth 60fps performance. What started as an exploration of scroll-driven animation evolved into a comprehensive booking platform that demonstrates how modern web technologies can elevate brand storytelling in the travel industry.",
+    image: getAssetPath("/images/travel-website.png"),
+    technologies: [
+      "Next.js 14 (App Router)",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "HTML5 Canvas",
+      "React Hook Form",
+      "Zod",
+      "Razorpay",
+      "Lenis Scroll",
+      "Lucide React"
+    ],
+    duration: "4 Weeks",
+    client: "Personal Project",
+    year: "2024",
+    category: "Web Development",
+    liveUrl: "https://travel-website-bay-three.vercel.app/",
+    githubUrl: "https://github.com/ibtihajjutt/travel-website",
+    features: [
+      "Cinematic canvas-based scrollytelling engine with 60fps image sequence playback",
+      "Custom useCanvasScroll hook that maps scroll position to frame progression",
+      "Horizontal stacking cards system with 3D depth scaling and z-index manipulation",
+      "Global smooth scroll with momentum-based physics using Lenis",
+      "Glassmorphism navigation with full-screen animated mobile overlay",
+      "Razorpay payment integration with secure Next.js API routes",
+      "Zod-validated contact forms with React Hook Form",
+      "Image preloading system for lag-free animation sequences",
+      "Responsive design system with custom luxury theme (brand-dark, brand-turquoise)",
+      "Server-side rendered destination pages with dynamic routing"
+    ],
+    challenges: [
+      {
+        title: "Canvas Animation Performance",
+        description: "Maintaining 60fps while loading and displaying high-resolution image sequences synced to scroll position",
+        solution: "Built a custom useImagePreloader hook for progressive loading and implemented requestAnimationFrame throttling with frame skipping for slower devices"
+      },
+      {
+        title: "Stacking Cards Physics",
+        description: "Creating a 'deck of cards' effect where items slide in and stack with proper depth scaling while maintaining scrollability",
+        solution: "Developed an improved sticky positioning system with dynamic z-index management and transform: scale() calculations based on scroll progress"
+      },
+      {
+        title: "Mobile Animation Fallbacks",
+        description: "Complex canvas animations causing performance issues on mobile devices",
+        solution: "Created device-aware animation system that reduces frame count and switches to CSS transforms on mobile while maintaining visual fidelity"
+      },
+      {
+        title: "Scroll Conflict Resolution",
+        description: "Smooth scroll library interfering with native browser behaviors and canvas scroll mapping",
+        solution: "Implemented custom scroll event delegation with normalized delta values and touch event debouncing"
+      }
+    ],
+    outcomes: [
+      "Built a reusable useCanvasScroll hook that can be applied to any image sequence project",
+      "Achieved consistent 60fps performance on desktop and 30+ fps on mobile devices",
+      "Reduced initial load time by 40% through dynamic image sequence loading",
+      "Created 5 distinct scroll-triggered animation systems (Canvas Hero, Stacking Cards, Parallax Globe)",
+      "Implemented 3 responsive breakpoints with tailored animation intensity",
+      "Developed a complete payment flow with 3-step verification and error handling",
+      "Designed 8 reusable animation components (GlassNav, StackCard, CanvasSequence) for future projects",
+      "Built a type-safe booking form with 6 validation schemas using Zod"
+    ]
+  },
+  {
+    id: 8,
+    title: "PureFlow",
+    subtitle: "Medical-Grade Mobile IV Therapy & Wellness Platform",
+    description: "A premium mobile IV therapy and wellness service platform that brings medical-grade treatments directly to customers' doors. PureFlow represents a sophisticated blend of healthcare professionalism and aspirational wellness branding, designed to make IV therapy feel both trustworthy and luxurious. I built this MVP-stage platform to solve the challenge of presenting medical services in an approachable yet authoritative way, featuring a comprehensive multi-step booking system, membership tiers, and an extensive treatment catalog. The interface combines deep indigo trust signals with purple wellness accents, creating a digital experience that feels both clinical and spa-like. What started as a UI exploration evolved into a full-fledged booking platform with 10 distinct IV treatments, 3 membership tiers, and service coverage across 9 major US cities.",
+    image: getAssetPath("/images/pureflow.png"), // Update this path as needed
+    technologies: [
+      "React 18",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "Lucide React",
+      "React Hook Form",
+      "Framer Motion"
+    ],
+    duration: "3 Weeks",
+    client: "Personal Project",
+    year: "2024",
+    category: "Web Development",
+    liveUrl: "https://travel-website-ad5x.vercel.app/",
+    githubUrl: "https://github.com/ibtihajjutt/mobile-IV-Therapy",
+    features: [
+      "Multi-step booking wizard with URL parameter pre-population (?treatment=ID, ?plan=NAME)",
+      "10-section homepage with sticky navigation and smooth scroll anchoring",
+      "Horizontal product slider showcasing 10 IV treatments with pricing",
+      "Three-tier membership system (Essential/Premium/Elite) with hover-scaling cards",
+      "Auto-rotating testimonial carousel with 5-star rating display",
+      "HIPAA compliance badges and trust indicators throughout booking flow",
+      "Expandable FAQ accordion with 6 wellness questions",
+      "9-city service area grid with responsive layout",
+      "Treatment detail modals with comprehensive medical information",
+      "Glassmorphism UI elements with backdrop-blur effects",
+      "Split-screen hero with animated sequence and gradient overlays",
+      "3-step process visualization (Book → Visit → Recover)"
+    ],
+    challenges: [
+      {
+        title: "Medical Compliance UI",
+        description: "Presenting medical treatments with appropriate authority while maintaining aspirational wellness aesthetics",
+        solution: "Developed a dual-tone color system using deep indigo (#1E1B4B) for trust and light purple (#8B5CF6) for wellness, with strategic placement of HIPAA badges and medical disclaimers"
+      },
+      {
+        title: "Complex Booking Parameters",
+        description: "Managing URL parameters that auto-populate both treatment selection and membership plan across the multi-step wizard",
+        solution: "Implemented React Router hooks with custom parameter parsing logic that preserves selections through navigation and handles fallback states"
+      },
+      {
+        title: "Treatment Data Architecture",
+        description: "Handling 10 distinct treatments with varying prices, descriptions, and medical details across multiple components (slider, cards, modals)",
+        solution: "Created a centralized treatment data structure with TypeScript interfaces that feeds all components from a single source of truth"
+      },
+      {
+        title: "Mobile Carousel Performance",
+        description: "Auto-rotating testimonials causing layout shifts and performance issues on mobile devices",
+        solution: "Built a custom intersection observer hook that pauses rotation when not in view and reduces animation complexity on touch devices"
+      }
+    ],
+    outcomes: [
+      "Designed and implemented 23 unique components across 4 page types (Home, Booking, Success, 404)",
+      "Built a comprehensive treatment catalog with 10 IV therapy options ranging from $189 to $599",
+      "Created 3 membership tiers with graduated pricing and benefits (Essential: $99, Premium: $189, Elite: $279)",
+      "Developed 9-city service area grid covering major US markets",
+      "Implemented responsive design across 5 breakpoints with mobile-first approach",
+      "Built reusable UI component library (Button, Input, Modal, Card) with 6 variants each",
+      "Created URL parameter system that handles 4 different booking scenarios (direct treatment, membership signup, etc.)",
+      "Achieved 90+ Lighthouse performance score through Vite optimizations",
+      "Reduced CSS bundle size by 42% using Tailwind's purge and JIT engine"
+    ],
+    treatments: [
+      { name: "All-Inclusive", price: "$399", category: "Premium" },
+      { name: "Myers Cocktail", price: "$199", category: "Essential" },
+      { name: "Immune Boost", price: "$229", category: "Wellness" },
+      { name: "Stomach Flu", price: "$249", category: "Medical" },
+      { name: "The Hangover", price: "$199", category: "Recovery" },
+      { name: "Beauty Glow", price: "$259", category: "Aesthetics" },
+      { name: "Athletic Performance", price: "$279", category: "Performance" },
+      { name: "NAD+ Boost", price: "$599", category: "Premium" },
+      { name: "Prenatal Relief", price: "$189", category: "Specialty" },
+      { name: "Migraine Relief", price: "$219", category: "Medical" }
+    ],
+    membershipTiers: [
+      { name: "Essential", price: "$99/mo", benefits: ["1 treatment", "10% discount"] },
+      { name: "Premium", price: "$189/mo", benefits: ["2 treatments", "15% discount", "Free B12"] },
+      { name: "Elite", price: "$279/mo", benefits: ["4 treatments", "20% discount", "VIP concierge"] }
+    ],
+    serviceAreas: [
+      "Los Angeles", "San Francisco", "San Diego", "Miami", "New York",
+      "Austin", "Phoenix", "Las Vegas", "Chicago"
+    ]
+  }
+  , {
+    id: 9,
+    title: "Velvet Pour",
+    subtitle: "Premium Cocktail Bar Experience with Scroll-Triggered Storytelling",
+    description: "An elegantly crafted single-page application for Velvet Pour, a premium cocktail bar that transforms digital storytelling into an immersive sensory experience. This project pushes the boundaries of web animation by combining GSAP's ScrollTrigger with video scrubbing, masked image reveals, and split-text typography to create a website that feels as sophisticated as the cocktails it showcases. Built with React 19 and Vite for blazing-fast performance, the site features a dark, noir-inspired aesthetic with gold accents that perfectly captures the ambiance of a high-end cocktail lounge. What makes this project unique is how it uses scroll position as a narrative device - from the hero video that scrubs frame-by-frame as you scroll, to the pinned art section with its dramatic masked reveals, every interaction is deliberately choreographed to guide visitors through the brand story. The result is a digital experience that doesn't just show cocktails - it makes you feel like you're already in the lounge.",
+    image: getAssetPath("/images/velvet-pour.png"), // Update this path as needed
+    technologies: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "GSAP",
+      "@gsap/react",
+      "ScrollTrigger",
+      "SplitText",
+      "react-responsive",
+      "ESLint"
+    ],
+    duration: "2 Weeks",
+    client: "Personal Project",
+    year: "2025",
+    category: "Web Development",
+    liveUrl: "https://mojito-cocktails-iota-gold.vercel.app/",
+    githubUrl: "https://github.com/ibtihajjutt/Mojito-Cocktails",
+    features: [
+      "Scroll-synced video scrubbing that plays/pauses based on scroll position",
+      "Split-text character animations using GSAP SplitText plugin",
+      "Pinned art section with masked image reveal effects",
+      "Interactive cocktail carousel with GSAP-powered slide transitions",
+      "Parallax decorative elements (leaf graphics) throughout",
+      "Noise texture overlay for authentic vintage bar aesthetic",
+      "Responsive menu system with 4 popular cocktails and 4 mocktails",
+      "Hash-based smooth scroll navigation (#cocktails, #about, #art, #menu)",
+      "Background blur navbar that activates on scroll",
+      "Custom gradient typography with gold text effects",
+      "Image gallery grid with 5 images in about section",
+      "Interactive rating display (4.5/5 with 120,000+ customers)"
+    ],
+    challenges: [
+      {
+        title: "Video Scrub Performance",
+        description: "Creating a video that scrubs smoothly with scroll without frame drops or desynchronization",
+        solution: "Implemented a custom ScrollTrigger timeline with frame-accurate video.currentTime mapping and preload='auto' to ensure 60fps playback"
+      },
+      {
+        title: "Masked Image Reveals",
+        description: "Creating the pinned section where images reveal through masks as user scrolls through feature points",
+        solution: "Built a complex ScrollTrigger pin-spacing system with clip-path animations that trigger sequentially based on scroll progress through 8 feature points"
+      },
+      {
+        title: "Split Text Responsiveness",
+        description: "SplitText creates new DOM elements that break on window resize, causing layout shifts",
+        solution: "Implemented resize observers that kill and rebuild SplitText animations when breakpoints change, with debounced execution"
+      },
+      {
+        title: "Carousel + Scroll Conflicts",
+        description: "GSAP carousel animations interfering with ScrollTrigger's scroll control",
+        solution: "Created isolated animation contexts with ScrollTrigger.normalizeScroll(true) and custom event delegation for carousel navigation"
+      }
+    ],
+    outcomes: [
+      "Built 7 fully animated sections with 15+ unique scroll-triggered animations",
+      "Created a custom video scrubbing system that maintains sync across 4 breakpoints",
+      "Designed 8 cocktail menu items with responsive pricing displays (4 alcoholic, 4 mocktails)",
+      "Implemented 5-image gallery with hover states and lazy loading",
+      "Developed reusable SplitText component for future typography-heavy projects",
+      "Achieved 95+ Lighthouse performance score despite heavy GSAP animations",
+      "Reduced animation jank by 60% through optimized GSAP timelines",
+      "Created 8 feature points in the art section with sequential masked reveals",
+      "Built responsive navigation with 4 hash links and mobile conditional rendering"
+    ],
+    cocktailMenu: [
+      { name: "Classic Mojito", category: "Signature", price: "$14", description: "Fresh mint, lime, rum, soda" },
+      { name: "Raspberry Mojito", category: "Signature", price: "$16", description: "Muddled raspberries, mint, lime, rum" },
+      { name: "Violet Breeze", category: "Specialty", price: "$18", description: "Violet liqueur, gin, lemon, lavender" },
+      { name: "Curacao Mojito", category: "Signature", price: "$17", description: "Blue curacao, mint, lime, white rum" }
+    ],
+    mocktailMenu: [
+      { name: "Tropical Bloom", category: "Mocktail", price: "$10", description: "Pineapple, coconut, lime, ginger" },
+      { name: "Passionfruit Mint", category: "Mocktail", price: "$9", description: "Passionfruit, mint, lime, soda" },
+      { name: "Chapel Hill Shiraz", category: "Wine", price: "$12", description: "Australian shiraz, non-alcoholic" },
+      { name: "Caten Malbee", category: "Wine", price: "$14", description: "De-alcoholized malbec" }
+    ],
+    brandDetails: {
+      fonts: ["Modern Negra (Display)", "Mona Sans (Body)", "DM Serif Text (Accent)"],
+      colors: ["#000000 (Background)", "#e7d393 (Gold Accent)", "#ffffff (Text)", "#efefef (Light Text)", "#434343 (Subtle Gray)"],
+      rating: "4.5/5",
+      customerCount: "120,000+",
+      location: "456, Raq Blvd. #404, Los Angeles, CA 90210",
+      hours: "Mon-Thu: 4pm-12am, Fri-Sat: 4pm-2am, Sun: 2pm-10pm"
+    }
   }
 ];
 
@@ -445,6 +710,7 @@ const testimonials = [
       "Blends technical skills with bold creativity to deliver exceptional results. They push boundaries and elevate every project they work on.",
     imgPath: getAssetPath("/images/client4.png"),
   },
+
 ];
 
 const footerIconsList = [

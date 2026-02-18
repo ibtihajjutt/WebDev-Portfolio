@@ -68,14 +68,9 @@ const About = () => {
                     Ibtihaj jutt
                   </h1>
                   <p className="md:text-2xl mt-2">
-                    I’m a Karachi-based frontend developer with a focus on
-                    building responsive, interactive web interfaces. I work
-                    mainly with React.js, JavaScript, Tailwind CSS, and Three.js
-                    — and I’ve also explored GAPS for animation and visual
-                    effects. I have a passion for clean design and smooth user
-                    experiences, and I’ve worked on a variety of projects across
-                    different domains, constantly learning and pushing my
-                    creative boundaries.
+                   I’m a Karachi-based full-stack developer focused on building scalable, high-performance web applications from concept to deployment. My core stack includes React.js, JavaScript, and Tailwind CSS on the frontend, complemented by backend development, API integration, and database design. I enjoy crafting responsive, interactive interfaces while ensuring robust server-side architecture and clean, maintainable code.
+
+I’ve worked across diverse projects, blending design sensibility with engineering best practices to deliver seamless user experiences. Constant learning and experimentation drive my approach, whether I’m optimizing performance, exploring new frameworks, or pushing creative boundaries with modern web technologies.
                   </p>
                 </div>
               </div>

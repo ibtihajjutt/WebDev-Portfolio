@@ -21,14 +21,17 @@ const Hero = () => {
           </div>
           <div className="absolute w-full z-30 bottom-20 right-0">
             <div className="flex justify-between items-end">
-              <div className="flex flex-col items-center md:gap-5 gap-1">
+              <a
+                href="#about"
+                className="flex flex-col items-center md:gap-5 gap-1 cursor-pointer"
+              >
                 <p className="md:text-base text-xs">Explore</p>
                 <img
                   src="/WebDev-Portfolio/images/arrowdown.svg"
                   alt="arrowdown"
                   className="size-7 animate-bounce"
                 />
-              </div>
+              </a>
               <div className="flex flex-col items-end">
                 <img src="/WebDev-Portfolio/images/shape.svg" alt="shape" />
                 <h1 className="font-bold md:text-9xl text-5xl">DEVELOPER</h1>

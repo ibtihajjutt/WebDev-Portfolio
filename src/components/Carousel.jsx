@@ -48,7 +48,7 @@ const Carousel = () => {
                 className="w-full h-full object-cover object-center"
               />
               <div className="absolute w-full h-20 bottom-0 left-0 bg-black-300 bg-opacity-90 px-5">
-                <div className="w-full h-full flex justify-between items-center">
+                <div className="w-full h-full flex justify-between items-center px-12">
                   <div className="flex-center gap-2">
                     <p className="md:text-xl text-sm lg:text-4xl lg:font-extrabold text-white-50 opacity-80">
                       {index + 1}.
@@ -62,15 +62,14 @@ const Carousel = () => {
                     className="flex-center gap-5 hover:opacity-100% transition-opacity cursor-pointer"
                   >
 
-                    <p className="text-lg hidden md:block font-bold text-white-50 opacity-80% ">
+                    <p className="text-lg hidden md:block font-bold text-white-50">
                       Preview Project
                     </p>
                     <img
                       src="/WebDev-Portfolio/images/arrowupright.svg"
                       alt="arrow"
-                      className="md:w-8 md:h-8 w-5 h-5 "
+                      className="md:w-8 md:h-8 w-5 h-5 brightness-200 invert"
                     />
-                    <div className="flex-center bg-transparent lg:w-15.5 h-2 "> </div>
                   </Link>
                 </div>
               </div>
@@ -81,7 +80,7 @@ const Carousel = () => {
 
 
       
-      <div className=" text-white-50 flex justify-end gap-5 md:-translate-x-32 -translate-x-5">
+      <div className="mt-5 text-white-50 flex justify-end gap-5 md:-translate-x-32 -translate-x-5">
         <div
           onClick={prevSlide}
           className="rounded-full cursor-pointer bg-blue-50 hover:bg-pink-100 active:scale-90 transition-all w-10 h-10 flex-center"
