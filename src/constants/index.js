@@ -114,7 +114,7 @@ const slides = [
   {
     id: 8,
     title: "Pure Flow",
-    img: getAssetPath("/images/pure-flow.png"),
+    img: getAssetPath("/images/pureflow.png"),
   },
   {
     id: 9,
@@ -503,7 +503,7 @@ const projectsData = [
     title: "PureFlow",
     subtitle: "Medical-Grade Mobile IV Therapy & Wellness Platform",
     description: "A premium mobile IV therapy and wellness service platform that brings medical-grade treatments directly to customers' doors. PureFlow represents a sophisticated blend of healthcare professionalism and aspirational wellness branding, designed to make IV therapy feel both trustworthy and luxurious. I built this MVP-stage platform to solve the challenge of presenting medical services in an approachable yet authoritative way, featuring a comprehensive multi-step booking system, membership tiers, and an extensive treatment catalog. The interface combines deep indigo trust signals with purple wellness accents, creating a digital experience that feels both clinical and spa-like. What started as a UI exploration evolved into a full-fledged booking platform with 10 distinct IV treatments, 3 membership tiers, and service coverage across 9 major US cities.",
-    image: getAssetPath("/images/pureflow.png"), // Update this path as needed
+    image: getAssetPath("/images/pureflow.png"), 
     technologies: [
       "React 18",
       "Vite",
