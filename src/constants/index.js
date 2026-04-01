@@ -135,7 +135,7 @@ const projectsData = [
     "title": "MediCare",
     "subtitle": "Full-Stack Health-Tech Ecosystem for Appointments & Clinical Management",
     "description": "MediCare is an enterprise-level healthcare orchestration platform designed to bridge the gap between patients, medical professionals, and clinical administrators. Built as a distributed system with three distinct applications—a patient-facing portal, a doctor’s management suite, and a master admin panel—the platform handles the entire clinical lifecycle. From AI-driven search and real-time slot booking to secure Stripe payment processing and Cloudinary-backed medical record imaging, MediCare provides a high-performance, secure environment for modern healthcare delivery. I engineered this project using a cutting-edge stack including React 19 and Tailwind CSS 4 to ensure industry-leading load times and a frictionless user experience across all medical touchpoints.",
-    "image": getAssetPath("/images/medicare-main.png"),
+    "image": getAssetPath("/images/medi-care.png"),
     "technologies": [
       "React 19",
       "Vite",
