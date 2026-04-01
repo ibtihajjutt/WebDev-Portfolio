@@ -78,46 +78,51 @@ const iconsList = [
 const slides = [
   {
     id: 1,
+    title: "MediCare",
+    img: getAssetPath("/images/medi-care.png"),
+  },
+  {
+    id: 2,
     title: "Splyt Drink",
     img: getAssetPath("/images/splyt-drink.png"),
   },
   {
-    id: 2,
+    id: 3,
     title: "Gym Website",
     img: getAssetPath("/images/Gymstatic.png"),
   },
   {
-    id: 3,
+    id: 4,
     title: "Foodie Hub's",
     img: getAssetPath("/images/foodie-hub2.png"),
   },
   {
-    id: 4,
+    id: 5,
     title: "Klimate",
     img: getAssetPath("/images/klimate2.png"),
   },
   {
-    id: 5,
+    id: 6,
     title: "Sonic Earphones",
     img: getAssetPath("/images/sonic.png"),
   },
   {
-    id: 6,
+    id: 7,
     title: "Pipoworks",
     img: getAssetPath("/images/pipoworks.png"),
   },
   {
-    id: 7,
+    id: 8,
     title: "Travel Website",
     img: getAssetPath("/images/travel-website.png"),
   },
   {
-    id: 8,
+    id: 9,
     title: "Pure Flow",
     img: getAssetPath("/images/pureflow.png"),
   },
   {
-    id: 9,
+    id: 10,
     title: "Velvet Pour",
     img: getAssetPath("/images/velvet-pour.png"),
   },
@@ -126,7 +131,85 @@ const slides = [
 // New projects data with detailed information
 const projectsData = [
   {
-    id: 1,
+    "id": 1,
+    "title": "MediCare",
+    "subtitle": "Full-Stack Health-Tech Ecosystem for Appointments & Clinical Management",
+    "description": "MediCare is an enterprise-level healthcare orchestration platform designed to bridge the gap between patients, medical professionals, and clinical administrators. Built as a distributed system with three distinct applications—a patient-facing portal, a doctor’s management suite, and a master admin panel—the platform handles the entire clinical lifecycle. From AI-driven search and real-time slot booking to secure Stripe payment processing and Cloudinary-backed medical record imaging, MediCare provides a high-performance, secure environment for modern healthcare delivery. I engineered this project using a cutting-edge stack including React 19 and Tailwind CSS 4 to ensure industry-leading load times and a frictionless user experience across all medical touchpoints.",
+    "image": getAssetPath("/images/medicare-main.png"),
+    "technologies": [
+      "React 19",
+      "Vite",
+      "Tailwind CSS 4",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Clerk Auth",
+      "Stripe",
+      "Cloudinary",
+      "React Router v7",
+      "Lucide React"
+    ],
+    "duration": "4 Weeks",
+    "client": "Personal Project",
+    "year": "2026",
+    "category": "Full-Stack Development",
+    "liveUrl": "https://medicare-v2.vercel.app/",
+    "githubUrl": "https://github.com/ibtihajjutt/MediCare",
+    "features": [
+      "Triple-App Architecture: Separate optimized builds for Patients, Doctors, and Admin Panels",
+      "Dual-Channel Booking: Integrated scheduling for both individual Doctor consultations and Diagnostic Services",
+      "Dynamic Slot Management: Real-time availability tracking with date-to-slot mapping and conflict prevention",
+      "Secure Hybrid Payments: Support for both 'Pay at Clinic' (Cash) and 'Online Prepayment' via Stripe Webhooks",
+      "Role-Based Access Control: Specialized authentication flows using Clerk for Patients and Doctors",
+      "Advanced Admin Dashboard: Global oversight of revenue, doctor onboarding, and service analytics",
+      "Doctor Portal: Personalized workspace for managing schedules, viewing patient history, and updating availability",
+      "Media Management: Automated image processing and Cloudinary optimization for medical practitioner profiles",
+      "Responsive Search Engine: Regex-based filtering for doctors by specialization, fee, or rating",
+      "Status Lifecycle: Complete appointment tracking from Pending and Confirmed to Completed or Rescheduled",
+      "Toast Notification System: Real-time UI feedback for booking confirmations and payment status",
+      "Analytics Aggregation: Backend MongoDB pipelines for calculating total revenue and completion rates"
+    ],
+    "challenges": [
+      {
+        "title": "Distributed State & Authentication",
+        "description": "Synchronizing user identities and role-based permissions across three separate frontend applications and a unified backend.",
+        "solution": "Implemented Clerk for identity management, utilizing custom metadata to distinguish between patients and providers, paired with Express middleware for backend route protection."
+      },
+      {
+        "title": "Complex Scheduling Logic",
+        "description": "Handling time-slot availability that varies by date and specific doctor/service hours without overbooking.",
+        "solution": "Developed a nested Date-to-Slot Map in Mongoose, utilizing specific hour/minute/ampm tracking and validation logic to lock slots upon successful Stripe session creation."
+      },
+      {
+        "title": "Hybrid Payment Processing",
+        "description": "Managing the data integrity of appointments when users switch between cash and online payment methods.",
+        "solution": "Built a robust Stripe Webhook handler that updates the database status asynchronously, ensuring 'Online' bookings are only confirmed upon verified fund transfer while maintaining 'Cash' as a pending state."
+      },
+      {
+        "title": "Legacy-Free Performance",
+        "description": "Leveraging the latest stable builds of React and Tailwind without sacrificing performance or browser compatibility.",
+        "solution": "Utilized React 19’s new features and Tailwind CSS 4’s JIT engine, resulting in a minimal CSS bundle and optimized hydration for the patient portal."
+      }
+    ],
+    "outcomes": [
+      "Successfully deployed 3 distinct applications connected to a single high-performance REST API",
+      "Engineered a medical database with 4 core schemas (Doctor, Appointment, Service, ServiceAppointment)",
+      "Reduced image load times by 60% through Cloudinary’s automated transformation and optimization",
+      "Achieved 95+ Lighthouse Performance scores on the Patient Portal via Vite-based code splitting",
+      "Implemented 15+ API endpoints with full search, pagination, and aggregation capabilities",
+      "Created a seamless mobile-first UI for patients to book checkups in under 60 seconds",
+      "Integrated 5.0-star rating and testimonial systems for practitioner social proof"
+    ],
+    "specialties": [
+      { "name": "Cardiology", "fee": "500+", "category": "Specialist" },
+      { "name": "Dermatology", "fee": "400+", "category": "Specialist" },
+      { "name": "Pediatrics", "fee": "350+", "category": "General" },
+      { "name": "Full Body Checkup", "price": "999", "category": "Service" },
+      { "name": "Diagnostic Imaging", "price": "1499", "category": "Service" }
+    ]
+  },
+  {
+    id: 2,
     title: "SPLYT Drink",
     subtitle: "Interactive Protein & Caffeine Beverage Showcase",
     description: "A cutting-edge marketing website for SPLYT, a premium protein and caffeine drink brand, designed to blend nostalgic aesthetics with modern web interactivity. This project represents a complete brand digital experience, featuring sophisticated scroll-triggered animations, immersive product showcases, and device-optimized performance. I built this platform to not just display product information, but to create an emotional connection through motion design and thoughtful user interactions. The site takes visitors on a journey through the brand's unique flavors, nutritional benefits, and customer testimonials, all while maintaining buttery-smooth 60fps animations across devices. What started as a simple product page evolved into a case study of how modern web technologies can elevate brand storytelling.",
@@ -173,7 +256,7 @@ const projectsData = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     title: "Gymstatic",
     subtitle: "Modern Gym Management Platform",
     description: "A comprehensive fitness platform featuring membership management, class scheduling, and member engagement tools designed to streamline gym operations and enhance user experience.",
@@ -214,7 +297,7 @@ const projectsData = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     title: "Foodie Hub",
     subtitle: "Modern Food Delivery Platform UI",
     description: "A mouthwatering React-based interface for a contemporary food delivery service that makes ordering as satisfying as the meals themselves. I designed this project to solve the common problem of cluttered food apps by creating a visually delicious yet functionally simple ordering experience. The interface combines appetite-stimulating colors with intuitive navigation, making the journey from hunger to checkout both beautiful and efficient. What began as a practice project evolved into a case study on how strategic color psychology and micro-interactions can significantly improve conversion rates in e-commerce interfaces. The warm gradient backgrounds and food-focused animations create an emotional connection before users even see the menu items.",
@@ -263,7 +346,7 @@ const projectsData = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     title: "Klimate",
     subtitle: "Hyperlocal Weather Intelligence Platform",
     description: "Klimate redefines weather forecasting by combining precision meteorology with thoughtful UX design. As a developer passionate about both clean code and atmospheric science, I built this app to solve the frustration of juggling multiple weather sources. Using the OpenWeatherMap API, Klimate delivers hyperlocal forecasts with surgical accuracy while maintaining a minimalist interface. The project evolved from a simple weather widget into a full-fledged application with intelligent caching, adaptive themes, and predictive search – all while keeping bundle size under 50KB. What makes Klimate special is how it balances real-time data with offline resilience, remembering your favorite locations and last-viewed forecast even without connectivity.",
@@ -323,7 +406,7 @@ const projectsData = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "Sonic Earphones",
     subtitle: "Immersive Product Launch Microsite",
     description: "A sensory-driven Framer experience that makes visitors feel the audio quality before they buy. Designed for the premium Sonic Earphones launch, this microsite transforms standard e-commerce conventions into an interactive audio journey. By leveraging Framer's scroll-triggered animations and seamless video integration, I created the illusion of spatial audio through visual storytelling. The minimalist interface keeps focus on product craftsmanship while subtle hover effects highlight key features. Built in just 4 days, this project demonstrates how Framer can deliver production-ready marketing sites faster than traditional development approaches.",
@@ -377,7 +460,7 @@ const projectsData = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     title: "Pipowork",
     subtitle: "Trusted Plumbing Services Platform",
     description: "A refreshing digital storefront for Pipowork Plumbing, transforming a traditionally analog service into a seamless online experience. Designed in Framer, this website combines approachable professionalism with intuitive navigation, making emergency plumbing services feel just a click away. The crisp white and rejuvenating green palette evokes cleanliness and reliability, while strategically placed CTAs guide users from problem recognition to solution booking in under 30 seconds. Built without code, this project demonstrates how modern tools like Framer can deliver enterprise-grade marketing sites faster and more cost-effectively than traditional development.",
@@ -430,7 +513,7 @@ const projectsData = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     title: "Cinematic Luxury Travel",
     subtitle: "Immersive Travel Booking Platform with Scroll-Driven Storytelling",
     description: "A high-performance, immersive travel booking experience built with Next.js 14, designed to captivate users with cinematic animations, smooth interactions, and a premium aesthetic. This project represents a fusion of luxury brand storytelling and technical innovation, featuring a custom canvas-based scrollytelling engine that transforms standard scrolling into a video-like narrative experience. I built this platform to push the boundaries of what's possible on the web, creating emotional connections through motion design while maintaining buttery-smooth 60fps performance. What started as an exploration of scroll-driven animation evolved into a comprehensive booking platform that demonstrates how modern web technologies can elevate brand storytelling in the travel industry.",
@@ -499,11 +582,11 @@ const projectsData = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     title: "PureFlow",
     subtitle: "Medical-Grade Mobile IV Therapy & Wellness Platform",
     description: "A premium mobile IV therapy and wellness service platform that brings medical-grade treatments directly to customers' doors. PureFlow represents a sophisticated blend of healthcare professionalism and aspirational wellness branding, designed to make IV therapy feel both trustworthy and luxurious. I built this MVP-stage platform to solve the challenge of presenting medical services in an approachable yet authoritative way, featuring a comprehensive multi-step booking system, membership tiers, and an extensive treatment catalog. The interface combines deep indigo trust signals with purple wellness accents, creating a digital experience that feels both clinical and spa-like. What started as a UI exploration evolved into a full-fledged booking platform with 10 distinct IV treatments, 3 membership tiers, and service coverage across 9 major US cities.",
-    image: getAssetPath("/images/pureflow.png"), 
+    image: getAssetPath("/images/pureflow.png"),
     technologies: [
       "React 18",
       "Vite",
@@ -589,7 +672,7 @@ const projectsData = [
     ]
   }
   , {
-    id: 9,
+    id: 10,
     title: "Velvet Pour",
     subtitle: "Premium Cocktail Bar Experience with Scroll-Triggered Storytelling",
     description: "An elegantly crafted single-page application for Velvet Pour, a premium cocktail bar that transforms digital storytelling into an immersive sensory experience. This project pushes the boundaries of web animation by combining GSAP's ScrollTrigger with video scrubbing, masked image reveals, and split-text typography to create a website that feels as sophisticated as the cocktails it showcases. Built with React 19 and Vite for blazing-fast performance, the site features a dark, noir-inspired aesthetic with gold accents that perfectly captures the ambiance of a high-end cocktail lounge. What makes this project unique is how it uses scroll position as a narrative device - from the hero video that scrubs frame-by-frame as you scroll, to the pinned art section with its dramatic masked reveals, every interaction is deliberately choreographed to guide visitors through the brand story. The result is a digital experience that doesn't just show cocktails - it makes you feel like you're already in the lounge.",
