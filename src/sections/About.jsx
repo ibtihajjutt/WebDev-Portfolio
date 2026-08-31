@@ -1,44 +1,9 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-
 import TitleHeader from "../components/TitleHeader";
 import GradientSpheres from "../components/GradientSpheres";
 import { bentoSocialLinks } from "../constants";
-import { Alien } from "../models/Alien";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
-
-gsap.registerPlugin(ScrollTrigger);
+import LazyScene from "../components/LazyScene";
 
 const About = () => {
-  useGSAP(() => {
-    gsap.from("#card", {
-      opacity: 0,
-      y: 50,
-      stagger: 0.3,
-      duration: 1,
-      ease: "power3.inout",
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top top",
-      },
-    });
-
-    gsap.from("#animated-text", {
-      opacity: 0,
-      y: 20,
-      stagger: 0.2,
-      duration: 0.6,
-      ease: "power3.inout",
-      scrollTrigger: {
-        trigger: "#about",
-        start: "top center",
-        end: "top 60%",
-      },
-    });
-  }, []);
-
   return (
     <section id="about" className="flex-center relative md:p-0 px-5">
       <GradientSpheres
@@ -50,7 +15,7 @@ const About = () => {
         <TitleHeader
           title="About Me"
           number="01"
-          text="Passionate Creator, Lifelong Learner"
+          text="WordPress and Shopify website specialist"
         />
         <div className="md:mt-20 mt-10">
           <div className="grid grid-cols-12 md:grid-rows-12 gap-5">
@@ -65,12 +30,10 @@ const About = () => {
                 </div>
                 <div className="mt-5">
                   <h1 className="text-blue-50 md:text-5xl text-3xl">
-                    Ibtihaj jutt
+                    Muhammad Ibtihaj
                   </h1>
-                  <p className="md:text-2xl mt-2">
-                   I’m a Karachi-based full-stack developer focused on building scalable, high-performance web applications from concept to deployment. My core stack includes React.js, JavaScript, and Tailwind CSS on the frontend, complemented by backend development, API integration, and database design. I enjoy crafting responsive, interactive interfaces while ensuring robust server-side architecture and clean, maintainable code.
-
-I’ve worked across diverse projects, blending design sensibility with engineering best practices to deliver seamless user experiences. Constant learning and experimentation drive my approach, whether I’m optimizing performance, exploring new frameworks, or pushing creative boundaries with modern web technologies.
+                  <p className="md:text-2xl mt-2 text-white-50/90">
+                    I am a Software Engineering graduate from Iqra University, Main Campus Karachi, with hands-on experience building and customizing WordPress and Shopify websites. My strongest areas are Elementor, WooCommerce, Shopify theme customization, custom Shopify sections, Liquid, responsive website development, website maintenance, troubleshooting, hosting, and deployment.
                   </p>
                 </div>
               </div>
@@ -78,60 +41,58 @@ I’ve worked across diverse projects, blending design sensibility with engineer
             <div className="md:col-span-5 col-span-12 row-span-5">
               <div className="bg-[#C8D751] hover:cursor-grab rounded-2xl w-full md:h-full h-60">
                 <div className="w-full h-full">
-                  <Canvas>
-                    <ambientLight />
-                    <OrbitControls enableZoom={false} />
-                    <Alien
-                      scale={2}
-                      position={[0, -5.5, 0]}
-                      rotation={[0, -0.5, 0]}
-                    />
-                  </Canvas>
+                  <LazyScene
+                    className="w-full h-full"
+                    loadComponent={() => import("../components/AboutAlienScene")}
+                    fallback={
+                      <div className="w-full h-full bg-[#C8D751] flex items-center justify-center text-black font-bold uppercase tracking-[0.2em]">
+                        3D Visual
+                      </div>
+                    }
+                  />
                 </div>
               </div>
             </div>
-            <div id="card" className="md:col-span-6 col-span-12 row-span-3">
+            <div className="md:col-span-6 col-span-12 row-span-3">
               <div className="bg-black-300 rounded-2xl p-7 w-full h-full">
                 <div className="flex flex-col h-full justify-center gap-2">
-                  <h1 className="animated-text gradient-title md:text-3xl text-2xl font-medium">
-                    Web Design & Dev
+                  <h1 className="gradient-title md:text-3xl text-2xl font-medium">
+                    WordPress Development
                   </h1>
-                  <p className="animated-text md:text-2xl max-w-96">
-                    Cleanly Designed, Conversion-focused, and build for easy
-                    updates.
+                  <p className="md:text-2xl max-w-96">
+                    Custom themes, Elementor builds, plugin setup, and responsive website improvements.
                   </p>
                 </div>
               </div>
             </div>
-            <div id="card" className="md:col-span-6 col-span-12 row-span-3">
+            <div className="md:col-span-6 col-span-12 row-span-3">
               <div className="bg-black-300 rounded-2xl p-7 w-full h-full">
                 <div className="flex flex-col h-full justify-center gap-2">
-                  <h1 className="animated-text gradient-title md:text-3xl text-2xl font-medium">
-                    Interface Design & Flow
+                  <h1 className="gradient-title md:text-3xl text-2xl font-medium">
+                    Shopify Customization
                   </h1>
-                  <p className="animated-text md:text-2xl max-w-96">
-                    I create interfaces that look great, feel natural, and work
-                    effortlessly.
+                  <p className="md:text-2xl max-w-96">
+                    Shopify theme work, custom sections, Liquid development, and ecommerce storefront customization.
                   </p>
                 </div>
               </div>
             </div>
-            <div id="card" className="md:col-span-4 col-span-12 row-span-4">
+            <div className="md:col-span-4 col-span-12 row-span-4">
               <div className="bg-black-300 rounded-2xl p-7 w-full h-full">
                 <div className="flex flex-col justify-between h-full">
                   <h1 className="gradient-title md:text-5xl text-3xl font-bold">
-                    BE YOURSELF!
+                    WordPress
                   </h1>
                   <h1 className="gradient-title md:text-5xl text-3xl font-bold">
-                    BE DIFFERENT!
+                    Shopify
                   </h1>
                   <h1 className="gradient-title md:text-5xl text-3xl font-bold">
-                    BUILD DIFFERENT!
+                    Ecommerce
                   </h1>
                 </div>
               </div>
             </div>
-           
+
             {bentoSocialLinks.map((item, index) => (
               <div key={index} className="md:col-span-4 col-span-12 row-span-2">
                 <a

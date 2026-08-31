@@ -3,6 +3,7 @@ import Hero from '../sections/Hero';
 import About from '../sections/About';
 import TechStack from '../sections/TechStack';
 import Project from '../sections/Projects';
+import Experience from '../sections/Experience';
 import Contact from '../sections/Contact';
 
 const HomePage = () => {
@@ -12,6 +13,7 @@ const HomePage = () => {
       <About />
       <TechStack />
       <Project />
+      <Experience />
       <Contact />
     </>
   );

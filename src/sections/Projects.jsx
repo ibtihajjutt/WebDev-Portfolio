@@ -13,9 +13,9 @@ const Projects = () => {
       <div className="w-full md:my-40 my-20 relative z-10">
         <div className="container mx-auto md:p-0 px-5">
           <TitleHeader
-            title="My PROJECTS"
+            title="Projects"
             number="03"
-            text="Check my recent project below for your Goal"
+            text="Client websites and ecommerce work"
           />
         </div>
         <div className="md:mt-20 mt-10">

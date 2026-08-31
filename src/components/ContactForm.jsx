@@ -1,7 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as Z from "zod";
-import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 const contactFormSchema = Z.object({
@@ -33,9 +32,11 @@ const ContactForm = () => {
   const onSubmit = async (data) => {
     setLoading(true);
     try {
+      const emailjs = (await import("@emailjs/browser")).default;
+
       const payload = {
         from_name: data.name,
-        to_name: "Full Stack Developer",
+        to_name: "WordPress & Shopify Developer",
         message: data.message,
         reply_to: data.email,
         subject: data.subject,
@@ -48,13 +49,14 @@ const ContactForm = () => {
       await emailjs.send(serviceID, templateID, payload, {
         publicKey: userID,
       });
+
+      alert("Message sent successfully!");
+      reset(initialValues);
     } catch (error) {
-      console.log("FAILED...", error);
+      console.error("FAILED...", error);
       alert("Failed to send message, please try again.");
     } finally {
       setLoading(false);
-      reset(initialValues);
-      alert("Message sent successfully!");
     }
   };
 

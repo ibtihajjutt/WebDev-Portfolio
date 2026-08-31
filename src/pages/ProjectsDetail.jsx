@@ -32,7 +32,7 @@ const ProjectsDetail = () => {
 
         setProject(foundProject);
         setError(null);
-      } catch (error) {
+      } catch {
         setError("Error loading project");
       } finally {
         setLoading(false);

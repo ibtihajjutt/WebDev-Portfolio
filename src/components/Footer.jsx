@@ -21,7 +21,7 @@ const Footer = () => {
               onClick={() => handleScrollToSection('home')} 
               className="text-2xl font-bold text-white mb-2 block cursor-pointer"
             >
-              Ibtihaj
+              Muhammad Ibtihaj
             </a>
             <p className="text-gray-400">© {new Date().getFullYear()} All rights reserved</p>
           </div>

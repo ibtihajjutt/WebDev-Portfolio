@@ -15,10 +15,14 @@ export function ContactBoy(props) {
   const { animations } = useFBX(danceAnimation); // Use the imported URL
   animations[0].name = "Dance";
   const action = useAnimations(animations, group);
+  const danceAction = action.actions.Dance;
 
   useEffect(() => {
-    action.actions["Dance"].play();
-  }, []);
+    if (!danceAction) return;
+
+    danceAction.play();
+    return () => danceAction.stop();
+  }, [danceAction]);
 
   return (
     <group {...props} ref={group} dispose={null}>
