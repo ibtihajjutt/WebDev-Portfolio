@@ -35,5 +35,3 @@ export function Alien(props) {
     </group>
   );
 }
-
-useGLTF.preload(AlienModel); // Preload the model using the imported URL

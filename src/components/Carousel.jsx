@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { slides } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
+
+  const handleProjectView = (projectId) => {
+    navigate(`/projects/${projectId}`);
+  };
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -26,12 +31,12 @@ const Carousel = () => {
   return (
     <div className="relative">
       <div className="w-[90%] mx-auto relative lg:h-[92vh] md:h-[45vh] h-[40vh]">
-        <div className="carousel-gradient-left-box md:w-52 w-16 h-full absolute bottom-0 left-0 z-20"></div>
-        <div className="carousel-gradient-right-box md:w-52 w-16 h-full absolute bottom-0 right-0 z-20"></div>
-        <div className="slider-container flex overflow-hidden lg:h-full md:h-[45vh] h-[38vh]">
+        <div className="carousel-gradient-left-box md:w-52 w-16 h-full absolute bottom-0 left-0 z-20 pointer-events-none"></div>
+        <div className="carousel-gradient-right-box md:w-52 w-16 h-full absolute bottom-0 right-0 z-20 pointer-events-none"></div>
+        <div className="slider-container flex relative z-30 overflow-hidden lg:h-full md:h-[45vh] h-[38vh]">
           {slides.map((slide, index) => (
             <div
-              className="slider-item w-full h-full flex-none relative"
+              className="slider-item w-full h-full flex-none relative z-10"
               key={slide.id ?? index}
             >
               {slide.img ? (
@@ -48,7 +53,7 @@ const Carousel = () => {
                   </div>
                 </div>
               )}
-              <div className="absolute inset-x-0 bottom-0 bg-black-300 bg-opacity-90 px-5 py-4">
+              <div className="absolute inset-x-0 bottom-0 z-30 bg-black-300 bg-opacity-90 px-5 py-4 pointer-events-auto">
                 <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-3 px-3 md:px-12">
                   <div className="flex flex-col gap-1">
                     <p className="text-xs uppercase tracking-[0.2em] text-white-50/70">{slide.category}</p>
@@ -56,9 +61,10 @@ const Carousel = () => {
                       {slide.title}
                     </p>
                   </div>
-                  <Link
-                    to={`/projects/${slide.id}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-50/60 bg-blue-50/10 px-3 py-2 md:px-4 md:py-2.5 text-[0.7rem] md:text-sm font-semibold text-white-50 shadow-sm transition-all duration-200 hover:bg-blue-50 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-50 focus-visible:ring-offset-2 focus-visible:ring-offset-black-300 active:scale-[0.98]"
+                  <button
+                    type="button"
+                    onClick={() => handleProjectView(slide.id)}
+                    className="relative z-40 cursor-pointer inline-flex items-center justify-center gap-2 rounded-full border border-blue-50/60 bg-blue-50/10 px-3 py-2 md:px-4 md:py-2.5 text-[0.7rem] md:text-sm font-semibold text-white-50 shadow-sm transition-all duration-200 hover:bg-blue-50 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-50 focus-visible:ring-offset-2 focus-visible:ring-offset-black-300 active:scale-[0.98] pointer-events-auto"
                     aria-label={`View project details for ${slide.title}`}
                   >
                     <span>View Project</span>
@@ -67,7 +73,7 @@ const Carousel = () => {
                       alt="arrow"
                       className="h-4 w-4 brightness-200 invert md:h-5 md:w-5"
                     />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>

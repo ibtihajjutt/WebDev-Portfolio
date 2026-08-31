@@ -1,4 +1,4 @@
-﻿const getAssetPath = (path) => {
+const getAssetPath = (path) => {
   const basePath = import.meta.env.DEV ? '' : '/WebDev-Portfolio';
   return `${basePath}${path}`;
 };
@@ -110,6 +110,13 @@ const projectPortfolio = [
     liveUrl: 'https://qabeela.biz',
     image: getAssetPath('/images/qabeela.jpg'),
   },
+  {
+    id: 9,
+    title: 'Mojito Cocktails',
+    category: 'Restaurant / Cocktail Website',
+    liveUrl: 'https://mojito-cocktails-iota-gold.vercel.app/',
+    image: getAssetPath('/images/mojito-cocktails.png'),
+  },
 ];
 
 const slides = projectPortfolio.map((project) => ({
@@ -120,38 +127,75 @@ const slides = projectPortfolio.map((project) => ({
   liveUrl: project.liveUrl,
 }));
 
-const projectsData = projectPortfolio.map((project) => ({
-  id: project.id,
-  title: project.title,
-  subtitle: project.category,
-  description: `${project.title} is a live client website representing a professional online presence for the business.`,
-  image: project.image,
-  technologies: ['WordPress & Shopify Development', 'Responsive Design', 'Website Maintenance', 'HTML', 'CSS', 'JavaScript'],
-  duration: 'Client Project',
-  client: project.title,
-  year: 'Live Website',
-  category: project.category,
-  liveUrl: project.liveUrl,
-  githubUrl: null,
-  features: [
-    'Professional website presentation',
-    'Responsive layout across devices',
-    'Clear business communication and call-to-action flow',
-    'Website updates and ongoing support',
-  ],
-  outcomes: [
-    'Professional client-facing website',
-    'Responsive and maintainable online presence',
-    'Clear communication for business goals',
-  ],
-  challenges: [
-    {
-      title: 'Project requirements',
-      description: 'Each website had to reflect the business clearly and professionally while remaining easy to maintain.',
-      solution: 'Focused on clean structure, responsive layout, and practical updates that align with the client goals.',
-    },
-  ],
-}));
+const projectsData = [
+  ...projectPortfolio.slice(0, 8).map((project) => ({
+    id: project.id,
+    title: project.title,
+    subtitle: project.category,
+    description: `${project.title} is a live client website representing a professional online presence for the business.`,
+    image: project.image,
+    technologies: ['WordPress & Shopify Development', 'Responsive Design', 'Website Maintenance', 'HTML', 'CSS', 'JavaScript'],
+    duration: 'Client Project',
+    client: project.title,
+    year: 'Live Website',
+    category: project.category,
+    liveUrl: project.liveUrl,
+    githubUrl: null,
+    features: [
+      'Professional website presentation',
+      'Responsive layout across devices',
+      'Clear business communication and call-to-action flow',
+      'Website updates and ongoing support',
+    ],
+    outcomes: [
+      'Professional client-facing website',
+      'Responsive and maintainable online presence',
+      'Clear communication for business goals',
+    ],
+    challenges: [
+      {
+        title: 'Project requirements',
+        description: 'Each website had to reflect the business clearly and professionally while remaining easy to maintain.',
+        solution: 'Focused on clean structure, responsive layout, and practical updates that align with the client goals.',
+      },
+    ],
+  })),
+  {
+    id: 9,
+    title: 'Mojito Cocktails',
+    subtitle: 'Restaurant / Cocktail Website',
+    description: 'A modern cocktail-focused website designed around strong visual presentation, menu discovery, and an engaging digital experience.',
+    image: getAssetPath('/images/mojito-cocktails.png'),
+    technologies: ['React', 'JavaScript', 'CSS', 'HTML', 'Vite'],
+    duration: 'Portfolio Project',
+    client: 'Mojito Cocktails',
+    year: 'Live Website',
+    category: 'Restaurant / Cocktail Website',
+    liveUrl: 'https://mojito-cocktails-iota-gold.vercel.app/',
+    githubUrl: 'https://github.com/ibtihajjutt/Mojito-Cocktails',
+    features: [
+      'Responsive frontend',
+      'Modern visual design',
+      'Cocktail/menu presentation',
+      'Interactive navigation',
+      'Art-focused sections',
+      'Structured footer',
+      'Component-based React architecture',
+    ],
+    outcomes: [
+      'Modern cocktail-focused digital experience',
+      'Premium visual presentation and menu discovery',
+      'Responsive layout for all device sizes',
+    ],
+    challenges: [
+      {
+        title: 'Visual immersion',
+        description: 'Designing a visually engaging cocktail website that balances menu clarity with an atmospheric, premium aesthetic.',
+        solution: 'Structured a component-based React layout combining hero presentation, cocktail/menu sections, art-focused visuals, and a polished footer for a cohesive, responsive experience.',
+      },
+    ],
+  },
+];
 
 const experienceData = [
   {
