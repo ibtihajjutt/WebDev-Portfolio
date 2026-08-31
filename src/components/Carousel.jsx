@@ -1,15 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { slides } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const openProject = useCallback((url) => {
-    if (!url) return;
-    window.open(url, "_blank", "noopener,noreferrer");
-  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -35,18 +31,8 @@ const Carousel = () => {
         <div className="slider-container flex overflow-hidden lg:h-full md:h-[45vh] h-[38vh]">
           {slides.map((slide, index) => (
             <div
-              className="slider-item w-full h-full flex-none relative cursor-pointer"
-              key={index}
-              onClick={() => openProject(slide.liveUrl)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  openProject(slide.liveUrl);
-                }
-              }}
-              role="link"
-              tabIndex={0}
-              aria-label={`Open ${slide.title} website`}
+              className="slider-item w-full h-full flex-none relative"
+              key={slide.id ?? index}
             >
               {slide.img ? (
                 <img
@@ -62,7 +48,7 @@ const Carousel = () => {
                   </div>
                 </div>
               )}
-              <div className="absolute inset-x-0 bottom-0 bg-black-300 bg-opacity-90 px-5 py-4" onClick={(event) => event.stopPropagation()}>
+              <div className="absolute inset-x-0 bottom-0 bg-black-300 bg-opacity-90 px-5 py-4">
                 <div className="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-3 px-3 md:px-12">
                   <div className="flex flex-col gap-1">
                     <p className="text-xs uppercase tracking-[0.2em] text-white-50/70">{slide.category}</p>
@@ -70,22 +56,18 @@ const Carousel = () => {
                       {slide.title}
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      openProject(slide.liveUrl);
-                    }}
+                  <Link
+                    to={`/projects/${slide.id}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-blue-50/60 bg-blue-50/10 px-3 py-2 md:px-4 md:py-2.5 text-[0.7rem] md:text-sm font-semibold text-white-50 shadow-sm transition-all duration-200 hover:bg-blue-50 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-50 focus-visible:ring-offset-2 focus-visible:ring-offset-black-300 active:scale-[0.98]"
-                    aria-label={`Visit ${slide.title} website`}
+                    aria-label={`View project details for ${slide.title}`}
                   >
-                    <span>Visit Website</span>
+                    <span>View Project</span>
                     <img
                       src="/WebDev-Portfolio/images/arrowupright.svg"
                       alt="arrow"
                       className="h-4 w-4 brightness-200 invert md:h-5 md:w-5"
                     />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

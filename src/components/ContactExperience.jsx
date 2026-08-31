@@ -5,7 +5,7 @@ import { ContactBoy } from "../models/ContactBoy";
 const ContactExperience = () => {
   return (
     <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/10 bg-black/20 shadow-[0_0_80px_rgba(89,142,255,0.2)]">
-      <Canvas camera={{ position: [0, 0, 5] }} dpr={[1, 1.5]} gl={{ antialias: false }}>
+      <Canvas camera={{ position: [0, 0, 4.2] }} dpr={[1, 1.5]} gl={{ antialias: false }}>
         <ambientLight intensity={2} />
         <directionalLight position={[-5, 5, 5]} intensity={5} color="#1C34FF" />
         <group rotation={[0, -0.5, 0]}>
@@ -23,7 +23,7 @@ const ContactExperience = () => {
             {"Hello\nWorld!"}
             <meshNormalMaterial />
           </Text3D>
-          <ContactBoy scale={2.2} position={[0, -3, 0]} />
+          <ContactBoy scale={3.1} position={[0, -3.4, 0]} />
         </group>
       </Canvas>
     </div>

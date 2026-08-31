@@ -32,7 +32,23 @@ const NavBar = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleNavClick = () => setIsMenuOpen(false);
+  const handleNavClick = (event, href) => {
+    const targetId = href.replace("#", "");
+    const section = document.getElementById(targetId);
+
+    if (event) {
+      event.preventDefault();
+    }
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => {
+        window.history.pushState(null, "", href);
+      }, 50);
+    }
+
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="w-full fixed z-50 top-0 left-0 bg-transparent">
@@ -54,6 +70,7 @@ const NavBar = () => {
                 <a
                   className={`gradient-title text-lg transition-colors ${isActive ? "text-white" : "text-white/80 hover:text-gray-200"}`}
                   href={item.href}
+                  onClick={(event) => handleNavClick(event, item.href)}
                 >
                   {item.name}
                 </a>
@@ -88,7 +105,7 @@ const NavBar = () => {
               <a
                 key={item.name}
                 href={item.href}
-                onClick={handleNavClick}
+                onClick={(event) => handleNavClick(event, item.href)}
                 className={`py-3 text-lg transition-colors ${activeSection === item.href.replace("#", "") ? "text-blue-50" : "text-white hover:text-gray-300"}`}
               >
                 {item.name}

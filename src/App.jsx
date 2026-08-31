@@ -11,8 +11,9 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/projects/:id" element={<ProjectsDetail />} />
         <Route path="/project/:id" element={<ProjectsDetail />} />
-        <Route path="*" element={<Navigate to="/" />} /> {/* catch-all redirect */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       <Footer />
     </>
